@@ -1,6 +1,7 @@
 /* ==========================================================================
    Adam W. Awerbuch, MD — Psychiatry, Santa Barbara
-   Design system: warm sand, eucalyptus sage, Pacific blue, terracotta tile.
+   Design system: brand aqua/teal from the practice logo, warm sand,
+   eucalyptus sage and Pacific blue. Terracotta is reserved for warnings.
    The arch motif nods to Santa Barbara's mission architecture.
    ========================================================================== */
 
@@ -30,13 +31,19 @@
   --terra-500: #bf6a43;
   --terra-100: #f6e4da;
 
-  --gold-400: #c9a46b;
+  /* Brand: sampled from the business-card logo */
+  --brand-100: #e2f3f7;
+  --brand-300: #6cc4d6;
+  --brand-500: #0fa0c8;
+  --brand-600: #08739a;
+  --brand-700: #08617f;
 
   --line: rgba(28, 42, 41, 0.12);
   --line-strong: rgba(28, 42, 41, 0.22);
 
   /* Type */
   --font-serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-brand: "Jost", "Futura", "Century Gothic", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   --step--1: clamp(0.84rem, 0.82rem + 0.1vw, 0.9rem);
@@ -111,11 +118,11 @@ a {
 }
 
 a:hover {
-  color: var(--terra-600);
+  color: var(--brand-600);
 }
 
 :focus-visible {
-  outline: 3px solid var(--terra-500);
+  outline: 3px solid var(--brand-600);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -153,7 +160,7 @@ h4 {
 h1 em,
 h2 em {
   font-style: italic;
-  color: var(--terra-600);
+  color: var(--brand-600);
   font-variation-settings: "SOFT" 100, "WONK" 1;
 }
 
@@ -237,7 +244,7 @@ strong {
 }
 
 .crisis-bar a:hover {
-  color: var(--terra-100);
+  color: var(--brand-300);
 }
 
 .crisis-bar svg {
@@ -277,6 +284,7 @@ strong {
 
 .brand {
   display: inline-flex;
+  min-width: 0;
   align-items: center;
   gap: 0.8rem;
   text-decoration: none;
@@ -289,7 +297,7 @@ strong {
 
 .brand__mark {
   flex: none;
-  width: 42px;
+  width: 37px;
   height: 48px;
 }
 
@@ -300,23 +308,49 @@ strong {
 }
 
 .brand__name {
-  font-family: var(--font-serif);
-  font-size: 1.12rem;
+  font-family: var(--font-brand);
+  font-size: 1.14rem;
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.015em;
+  color: #3a3f44;
 }
 
 .brand__tag {
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--sage-700);
-  font-weight: 600;
-  margin-top: 0.2rem;
+  font-family: var(--font-brand);
+  font-size: 0.92rem;
+  letter-spacing: 0.3em;
+  color: var(--brand-600);
+  margin-top: 0.15rem;
+}
+
+@media (max-width: 480px) {
+  .site-header .container {
+    gap: 0.75rem;
+  }
+
+  .brand {
+    gap: 0.6rem;
+  }
+
+  .brand__name {
+    font-size: 0.98rem;
+    white-space: nowrap;
+  }
+
+  .brand__tag {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .brand__name {
+    font-size: 0.88rem;
+  }
 }
 
 .nav-toggle {
   display: none;
+  flex: none;
   align-items: center;
   justify-content: center;
   width: 46px;
@@ -434,7 +468,7 @@ strong {
   .site-nav a:not(.btn):hover,
   .site-nav a[aria-current="page"] {
     background: transparent;
-    color: var(--terra-600);
+    color: var(--brand-600);
   }
 
   .site-nav .btn {
@@ -447,9 +481,9 @@ strong {
    -------------------------------------------------------------------------- */
 
 .btn {
-  --btn-bg: var(--terra-600);
+  --btn-bg: var(--brand-600);
   --btn-fg: #fff;
-  --btn-border: var(--terra-600);
+  --btn-border: var(--brand-600);
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
@@ -470,11 +504,11 @@ strong {
 }
 
 .btn:hover {
-  --btn-bg: var(--terra-700);
-  --btn-border: var(--terra-700);
+  --btn-bg: var(--brand-700);
+  --btn-border: var(--brand-700);
   color: var(--btn-fg);
   transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(165, 83, 47, 0.22);
+  box-shadow: 0 8px 20px rgba(8, 115, 154, 0.22);
 }
 
 .btn svg {
@@ -538,7 +572,7 @@ strong {
   align-items: center;
   gap: 0.4rem;
   font-weight: 600;
-  color: var(--terra-600);
+  color: var(--brand-600);
   text-decoration: none;
 }
 
@@ -549,7 +583,7 @@ strong {
 }
 
 .text-link:hover {
-  color: var(--terra-700);
+  color: var(--brand-700);
 }
 
 .text-link:hover svg {
@@ -587,7 +621,7 @@ strong {
 }
 
 .section--dark h2 em {
-  color: var(--gold-400);
+  color: var(--brand-300);
 }
 
 .eyebrow {
@@ -599,7 +633,7 @@ strong {
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--sage-700);
+  color: var(--brand-700);
 }
 
 .eyebrow::before {
@@ -611,7 +645,7 @@ strong {
 }
 
 .section--dark .eyebrow {
-  color: var(--sage-200);
+  color: var(--brand-300);
 }
 
 .section-head {
@@ -698,7 +732,7 @@ strong {
   position: absolute;
   inset: auto -20% -45% 30%;
   height: 90%;
-  background: radial-gradient(closest-side, rgba(191, 106, 67, 0.12), transparent 70%);
+  background: radial-gradient(closest-side, rgba(15, 160, 200, 0.1), transparent 70%);
   pointer-events: none;
 }
 
@@ -737,7 +771,7 @@ strong {
 .hero__meta svg {
   width: 18px;
   height: 18px;
-  color: var(--sage-500);
+  color: var(--brand-500);
 }
 
 .hero__art {
@@ -886,7 +920,7 @@ strong {
   flex: none;
   width: 26px;
   height: 26px;
-  color: var(--terra-600);
+  color: var(--brand-600);
   margin-top: 0.15rem;
 }
 
@@ -951,8 +985,8 @@ strong {
   height: 54px;
   margin-bottom: 1.4rem;
   border-radius: 50% 50% 14px 14px / 55% 55% 14px 14px;
-  background: var(--terra-100);
-  color: var(--terra-600);
+  background: var(--brand-100);
+  color: var(--brand-600);
 }
 
 .card__icon svg {
@@ -1003,7 +1037,7 @@ strong {
   line-height: 1;
   font-weight: 400;
   font-style: italic;
-  color: var(--gold-400);
+  color: var(--brand-300);
   margin-bottom: 1rem;
 }
 
@@ -1022,7 +1056,7 @@ strong {
 }
 
 .section:not(.section--dark) .steps .num {
-  color: var(--terra-500);
+  color: var(--brand-600);
 }
 
 .section:not(.section--dark) .steps p {
@@ -1095,7 +1129,7 @@ strong {
   overflow: hidden;
   padding: clamp(2rem, 1.5rem + 3vw, 4rem);
   border-radius: var(--radius-lg);
-  background: linear-gradient(140deg, var(--sage-100) 0%, var(--sand-100) 60%, var(--terra-100) 130%);
+  background: linear-gradient(140deg, var(--sage-100) 0%, var(--sand-100) 60%, var(--brand-100) 130%);
   border: 1px solid var(--line);
 }
 
@@ -1186,7 +1220,7 @@ strong {
 }
 
 .cta-band h2 em {
-  color: var(--gold-400);
+  color: var(--brand-300);
 }
 
 .cta-band p {
@@ -1234,7 +1268,7 @@ strong {
   width: 180px;
   height: 220px;
   border-radius: 50% 50% 0 0 / 44% 44% 0 0;
-  background: linear-gradient(180deg, var(--terra-100), rgba(246, 228, 218, 0));
+  background: linear-gradient(180deg, var(--brand-100), rgba(226, 243, 247, 0));
   pointer-events: none;
 }
 
@@ -1282,7 +1316,7 @@ strong {
 }
 
 .breadcrumb a:hover {
-  color: var(--terra-600);
+  color: var(--brand-600);
   text-decoration: underline;
 }
 
@@ -1315,7 +1349,7 @@ strong {
 .pullquote {
   margin: 2.5rem 0;
   padding: 0.25rem 0 0.25rem 1.5rem;
-  border-left: 3px solid var(--terra-500);
+  border-left: 3px solid var(--brand-600);
   font-family: var(--font-serif);
   font-size: var(--step-2);
   line-height: 1.35;
@@ -1361,7 +1395,7 @@ strong {
   height: 16px;
   border-radius: 999px;
   background: var(--sand-50);
-  border: 3px solid var(--terra-500);
+  border: 3px solid var(--brand-600);
 }
 
 .timeline .when {
@@ -1409,7 +1443,7 @@ strong {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--terra-600);
+  color: var(--brand-600);
   margin-bottom: 0.4rem;
 }
 
@@ -1452,8 +1486,8 @@ strong {
 }
 
 .toc a:hover {
-  border-color: var(--terra-500);
-  color: var(--terra-600);
+  border-color: var(--brand-600);
+  color: var(--brand-600);
 }
 
 .detail {
@@ -1569,7 +1603,7 @@ strong {
 }
 
 .faq summary:hover {
-  color: var(--terra-600);
+  color: var(--brand-600);
 }
 
 .faq .answer {
@@ -1686,7 +1720,7 @@ strong {
 }
 
 .info-list .value a:hover {
-  color: var(--terra-600);
+  color: var(--brand-600);
   text-decoration: underline;
 }
 
@@ -1852,7 +1886,7 @@ fieldset.field {
 }
 
 .choice input:focus-visible + span {
-  outline: 3px solid var(--terra-500);
+  outline: 3px solid var(--brand-600);
   outline-offset: 2px;
 }
 
@@ -1942,8 +1976,12 @@ fieldset.field {
   text-decoration: none;
 }
 
+.site-footer .brand__name {
+  color: var(--sand-50);
+}
+
 .site-footer .brand__tag {
-  color: var(--sage-200);
+  color: var(--brand-300);
 }
 
 .site-footer h2 {

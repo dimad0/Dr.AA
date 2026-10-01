@@ -146,12 +146,15 @@
     var phoneLink = phone
       ? ' <a href="tel:+1' + phone.replace(/\D/g, "") + '">' + phone + "</a>"
       : "";
+    var email = form.getAttribute("data-email") || "";
+    var emailLink = email ? ' <a href="mailto:' + email + '">' + email + "</a>" : "";
     var endpoint = (form.getAttribute("data-endpoint") || "").trim();
 
     if (!endpoint) {
       showStatus(
         "<strong>Thank you.</strong> Online requests are not yet being received. To schedule, please call the office at" +
           phoneLink +
+          (emailLink ? " or email" + emailLink : "") +
           ".",
         "calm"
       );

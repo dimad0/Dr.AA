@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="62 52 524 688" role="img" aria-labelledby="t">
+  <title id="t">Adam W. Awerbuch, MD, PC logo</title>
+  <!-- Vector recreation of the business-card mark: a profile whose outline spirals into an interlocking "mind" knot.
+       Replace with the designer's original vector file if one is available. -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="27">
+    <rect x="160" y="150" width="296" height="274" rx="76" stroke="#6cc4d6" stroke-opacity="0.85"/>
+    <ellipse cx="312" cy="302" rx="134" ry="122" stroke="#0fa0c8" stroke-opacity="0.9"/>
+    <path d="M378 556 L488 548 L496 434 L548 404 Q558 397 552 386 L512 252 C490 160 420 80 318 80 C188 80 90 176 90 300 C90 412 172 492 290 492 L330 492 C368 492 396 466 396 430 L396 290 C396 258 374 236 344 236 L258 236 C228 236 206 258 206 290 L206 372 C206 404 228 426 260 426 L360 426" stroke="#6cc4d6" stroke-opacity="0.92"/>
+    <path d="M352 712 L378 556" stroke="#0fa0c8"/>
+  </g>
+</svg>
