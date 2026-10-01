@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="t">
+  <title id="t">Illustration of the Santa Barbara coastline: the Santa Ynez Mountains, red-tile rooftops, palm trees and the Pacific at sunrise</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#efd3bd"/>
+      <stop offset="0.45" stop-color="#f6e6d6"/>
+      <stop offset="1" stop-color="#fbf4ea"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4c7a8c"/>
+      <stop offset="0.5" stop-color="#2f5a6d"/>
+      <stop offset="1" stop-color="#1f4153"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f4c49c" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#f4c49c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky & sun -->
+  <rect width="400" height="500" fill="url(#sky)"/>
+  <circle cx="268" cy="168" r="96" fill="url(#glow)"/>
+  <circle cx="268" cy="168" r="40" fill="#eeb48a"/>
+
+  <!-- Soft clouds -->
+  <g fill="#fbf6ee" opacity="0.85">
+    <rect x="58" y="112" width="96" height="10" rx="5"/>
+    <rect x="84" y="128" width="70" height="8" rx="4"/>
+    <rect x="300" y="226" width="78" height="8" rx="4"/>
+  </g>
+
+  <!-- Santa Ynez Mountains: far ridge -->
+  <path d="M0 262 L28 236 L52 244 L86 206 L118 226 L150 196 L182 214 L214 188 L246 210 L276 192 L310 216 L342 198 L372 218 L400 206 V320 H0 Z" fill="#c4d0c5"/>
+  <!-- Near ridge -->
+  <path d="M0 288 L36 258 L70 270 L104 242 L142 262 L176 240 L214 262 L250 246 L288 266 L322 250 L360 270 L400 254 V330 H0 Z" fill="#94ac9c"/>
+  <!-- Foothills -->
+  <path d="M0 312 C40 296 76 300 110 292 C150 284 186 300 226 294 C268 288 300 298 340 290 C364 286 384 290 400 288 V340 H0 Z" fill="#6f8f7b"/>
+
+  <!-- Town: white walls, terracotta roofs, mission-style tower -->
+  <g>
+    <rect x="150" y="300" width="22" height="26" fill="#f6efe4"/>
+    <path d="M147 302 L161 292 L175 302 Z" fill="#bf6a43"/>
+    <rect x="178" y="306" width="30" height="20" fill="#f2e9dc"/>
+    <path d="M175 308 L193 298 L211 308 Z" fill="#a5532f"/>
+    <rect x="214" y="290" width="14" height="36" fill="#f6efe4"/>
+    <path d="M214 290 a7 7 0 0 1 14 0 Z" fill="#bf6a43"/>
+    <rect x="218.5" y="297" width="5" height="8" rx="2.5" fill="#94ac9c"/>
+    <rect x="232" y="304" width="34" height="22" fill="#f2e9dc"/>
+    <path d="M229 306 L249 295 L269 306 Z" fill="#bf6a43"/>
+    <rect x="240" y="312" width="5" height="8" rx="2.5" fill="#c4d0c5"/>
+    <rect x="253" y="312" width="5" height="8" rx="2.5" fill="#c4d0c5"/>
+    <rect x="272" y="309" width="24" height="17" fill="#f6efe4"/>
+    <path d="M269 311 L284 302 L299 311 Z" fill="#a5532f"/>
+    <rect x="304" y="312" width="22" height="14" fill="#f2e9dc"/>
+    <path d="M301 314 L315 306 L329 314 Z" fill="#bf6a43"/>
+  </g>
+
+  <!-- Shoreline -->
+  <path d="M0 326 H400 V338 H0 Z" fill="#e9dcc6"/>
+
+  <!-- Ocean -->
+  <rect y="336" width="400" height="164" fill="url(#sea)"/>
+  <!-- Sun reflection -->
+  <g stroke="#f4c49c" stroke-linecap="round" opacity="0.7">
+    <path d="M250 352 H286" stroke-width="3"/>
+    <path d="M256 366 H280" stroke-width="3"/>
+    <path d="M246 382 H290" stroke-width="2.5"/>
+    <path d="M260 398 H276" stroke-width="2.5"/>
+    <path d="M252 416 H284" stroke-width="2"/>
+  </g>
+  <!-- Ripples -->
+  <g stroke="#fbf8f3" stroke-linecap="round" opacity="0.28" stroke-width="2">
+    <path d="M40 360 H76"/>
+    <path d="M120 374 H150"/>
+    <path d="M330 368 H372"/>
+    <path d="M60 404 H110"/>
+    <path d="M310 410 H346"/>
+    <path d="M150 432 H196"/>
+    <path d="M24 452 H58"/>
+    <path d="M232 456 H280"/>
+    <path d="M340 470 H384"/>
+  </g>
+
+  <!-- Sailboat -->
+  <g transform="translate(150 360)">
+    <path d="M0 22 H34 L28 30 H6 Z" fill="#fbf8f3"/>
+    <path d="M17 0 V21 H3 Z" fill="#fbf8f3"/>
+    <path d="M19 4 V21 H31 Z" fill="#f2dccb"/>
+  </g>
+
+  <!-- Foreground beach -->
+  <path d="M0 438 C48 430 104 434 150 450 C178 460 196 478 204 500 H0 Z" fill="#e9dcc6"/>
+  <path d="M0 438 C48 430 104 434 150 450 C178 460 196 478 204 500" fill="none" stroke="#fbf8f3" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <path d="M0 462 C44 456 92 460 128 474 C146 481 158 490 164 500 H0 Z" fill="#dccfba"/>
+
+  <!-- Palms -->
+  <g fill="none" stroke="#1f4153" stroke-linecap="round">
+    <path d="M56 462 C58 400 64 320 80 220" stroke-width="6"/>
+    <path d="M104 466 C104 420 106 360 114 300" stroke-width="5"/>
+  </g>
+  <g fill="#1f4153">
+    <!-- Tall palm crown at (80,220) -->
+    <path d="M80 220 C62 204 38 204 22 222 C42 214 60 214 80 224 Z"/>
+    <path d="M80 220 C66 196 44 186 26 190 C46 196 62 206 79 223 Z"/>
+    <path d="M80 220 C78 196 90 180 108 176 C96 188 88 202 82 222 Z"/>
+    <path d="M80 220 C98 204 122 204 138 220 C118 214 100 216 81 224 Z"/>
+    <path d="M80 220 C100 214 120 222 128 242 C114 230 98 226 81 223 Z"/>
+    <path d="M80 220 C62 222 46 236 42 254 C54 240 66 232 80 223 Z"/>
+    <path d="M80 220 C70 200 70 184 80 172 C78 188 80 204 82 221 Z"/>
+    <!-- Short palm crown at (114,300) -->
+    <path d="M114 300 C100 288 82 288 70 302 C86 296 100 296 114 303 Z"/>
+    <path d="M114 300 C106 282 92 274 78 276 C94 282 104 290 113 302 Z"/>
+    <path d="M114 300 C114 282 124 270 138 268 C128 278 120 288 115 302 Z"/>
+    <path d="M114 300 C128 288 146 288 158 300 C142 296 128 298 115 303 Z"/>
+    <path d="M114 300 C128 296 144 302 150 318 C140 308 128 304 115 302 Z"/>
+    <path d="M114 300 C100 302 90 312 86 326 C96 316 104 308 114 302 Z"/>
+  </g>
+</svg>
