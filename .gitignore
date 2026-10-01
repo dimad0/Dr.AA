@@ -1,0 +1,4 @@
+# Impeccable: per-machine hook state (shared settings live in .impeccable/config.json)
+.impeccable/config.local.json
+.impeccable/hook.cache.json
+.impeccable/hook.pending.json
