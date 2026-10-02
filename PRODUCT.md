@@ -16,7 +16,7 @@ Other audiences the current site addresses, not confirmed as priorities: people 
 
 The website for Adam W. Awerbuch, MD, PC, a psychiatry practice in Santa Barbara, California. It explains who Dr. Awerbuch is, what he treats, how becoming a patient works, and how to reach the office.
 
-Success is a visitor contacting the office. Phone, email, and the online request form are equally good outcomes; no channel is preferred over another.
+Success is a visitor contacting the office. Phone and email are equally good outcomes; no channel is preferred over another. An online request form would count equally once one exists.
 
 ## Positioning
 
@@ -31,15 +31,16 @@ Future work should not promote one of these to a headline position without the o
 
 ## Operating Context
 
-- Intake runs through the office: phone (805) 845-3046, email office@aawerbuchmd.com, or the request form on the contact page.
-- The request form has no submission endpoint yet. It validates input, then asks the visitor to call.
+- Intake runs through the office: phone (805) 845-3046 or email office@aawerbuchmd.com.
+- There is no online request form. The earlier one had no submission endpoint and turned visitors away after they filled it in, so it was removed on 2026-10-01. A shorter form (name, one contact method, optional note) can return once a HIPAA-compliant provider is in place.
+- What the office does after someone reaches out (who answers, how quickly email gets a reply, whether voicemail is left) is not confirmed. The site says only that the office gathers basic information, answers questions about fit and insurance, and schedules a first visit.
 - The office is at 351 Hitchcock Way, Suite B165, Santa Barbara, CA 93105.
 - The site is intended for the practice domain aawerbuchmd.com. The office email runs on the same domain, so website DNS changes must leave mail records alone.
 - The site is static with no build step: plain HTML, one stylesheet, one script, hostable on any static host. The header, crisis bar, and footer are duplicated in every HTML file, so shared details must be updated on every page.
 
 ## Capabilities and Constraints
 
-**Existing pages:** home, about, conditions and treatment, new patients (steps, what to bring, insurance, FAQ), contact (address, map, hours, request form, crisis resources), and a 404 page.
+**Existing pages:** home, about, conditions and treatment, new patients (steps, what to bring, insurance, FAQ), contact (call and email options, what happens next, address, map, hours, crisis resources), and a 404 page.
 
 **Constraints:**
 
@@ -82,7 +83,7 @@ No voice or personality has been confirmed by the owner.
 
 **Absent. Do not fabricate:**
 
-- No headshot. `assets/img/portrait-placeholder.svg` is a stand-in.
+- No headshot. The site shows no portrait until a real one exists.
 - No photographs of the office or building.
 - No patient testimonials, reviews, ratings, or outcome statistics.
 - No list of accepted insurance plans and no fees.
@@ -98,4 +99,4 @@ No voice or personality has been confirmed by the owner.
 
 ## Accessibility & Inclusion
 
-No formal standard has been set by the owner. The existing implementation already holds itself to WCAG AA contrast for buttons and text, and includes a skip link, semantic landmarks, visible focus states, an Escape-closable menu, `prefers-reduced-motion` support, and form errors announced to assistive technology. Future work should not regress these.
+No formal standard has been set by the owner. The existing implementation already holds itself to WCAG AA contrast for buttons and text, and includes a skip link, semantic landmarks, focus rings that stay visible on dark areas, an Escape-closable menu that keeps focus out of the page behind it, 44px tap targets on buttons and standalone links, and `prefers-reduced-motion` support. Future work should not regress these. Any form added later must link each error message to its field so screen readers announce it; the removed form did not.

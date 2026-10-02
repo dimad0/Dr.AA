@@ -43,10 +43,15 @@
           <span class="brand__tag">Psychiatry</span>
         </span>
       </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
+      <div class="header-actions">
+        <a class="header-call" href="tel:+18058453046" aria-label="Call the office at (805) 845-3046">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
       <nav class="site-nav" id="site-nav" aria-label="Primary">
         <ul>
           <li><a href="about.html" aria-current="page">About</a></li>
@@ -81,22 +86,13 @@
     <section class="section" aria-labelledby="bio-title">
       <div class="container">
         <div class="split split--wide-right split--top">
-          <figure class="portrait reveal" style="margin: 0">
-            <div class="arch-outline" aria-hidden="true"></div>
-            <div class="arch-frame">
-              <!-- Replace with a professional headshot, e.g. assets/img/dr-awerbuch.jpg -->
-              <img src="assets/img/portrait-placeholder.svg" alt="Portrait of Dr. Adam W. Awerbuch" width="400" height="500">
-            </div>
-            <figcaption>
-              <strong>Adam Weston Awerbuch, MD, MBA</strong>
-              Psychiatrist · Santa Barbara, CA
-            </figcaption>
-          </figure>
+          <!-- When a headshot is available, it belongs in this column above the statement -->
+          <div>
+            <h2 id="bio-title" class="sr-only">Biography</h2>
+            <p class="statement">Dr. Adam Awerbuch is a psychiatrist practicing in Santa Barbara, California. His work in adult psychiatry focuses on treatment-resistant depression, anxiety disorders, obsessive-compulsive disorder, and other mood disorders, with a particular interest in addiction medicine and the care of people living with serious mental illness.</p>
+          </div>
 
           <div class="prose">
-            <h2 id="bio-title" class="sr-only">Biography</h2>
-            <p class="lede">Dr. Adam Awerbuch is a psychiatrist practicing in Santa Barbara, California. His work in adult psychiatry focuses on treatment-resistant depression, anxiety disorders, obsessive-compulsive disorder, and other mood disorders, with a particular interest in addiction medicine and the care of people living with serious mental illness.</p>
-
             <p>He attended the University of Miami Leonard M. Miller School of Medicine, where he earned a dual MD/MBA degree, concentrating his business studies in healthcare administration. He went on to complete his psychiatry residency at the University of Miami and Jackson Memorial Hospital in Miami, Florida.</p>
 
             <p>Residency placed him on the front lines of psychiatric care. He worked closely with patients facing substance use disorders and with people living with HIV, treated patients with serious mental illness, and researched interventions to assist victims of human trafficking — work that contributed to peer-reviewed publications on how clinicians can better recognize and care for survivors.</p>
@@ -106,11 +102,11 @@
             <p>He has since established his own private practice, Adam W. Awerbuch, MD, PC, at 351 Hitchcock Way in Santa Barbara, where he provides psychiatric evaluations and ongoing care.</p>
 
             <h2>Philosophy of care</h2>
-            <p>Dr. Awerbuch is committed to a patient-centered approach to mental health. That means taking the time to understand the whole person, building a personalized care plan rather than following a template, and — where appropriate — integrating cutting-edge treatments for people who haven’t responded to standard care.</p>
+            <p>Dr. Awerbuch is committed to a patient-centered approach to mental health. That means taking the time to understand the whole person, building a personalized care plan rather than following a template, and — where appropriate — integrating newer treatments for people who haven’t responded to standard care.</p>
             <p>His business training adds a practical understanding of how healthcare systems work, which helps when coordinating care among therapists, primary care physicians, hospitals, and insurers.</p>
 
             <div class="btn-row" style="margin-top: 2rem">
-              <a class="btn" href="contact.html#request">Request an appointment</a>
+              <a class="btn" href="contact.html">Contact the office</a>
               <a class="btn btn--outline" href="services.html">Conditions &amp; treatment</a>
             </div>
           </div>
@@ -167,7 +163,7 @@
               <li>Transcranial Magnetic Stimulation (TMS) and other neuromodulation</li>
             </ul>
 
-            <div class="card card--static" style="margin-top: 2.5rem">
+            <div class="card" style="margin-top: 2.5rem">
               <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M10 21v-4h4v4"/><path d="M12 8v4M10 10h4"/></svg></span>
               <h3>Hospital affiliation</h3>
               <p>Dr. Awerbuch is a member of the medical staff at Santa Barbara Cottage Hospital, Department of Psychiatry.</p>
@@ -188,12 +184,12 @@
         <ul class="pub-list">
           <li class="pub reveal">
             <span class="journal">Trauma, Violence, &amp; Abuse · 2020</span>
-            <h3><a href="https://doi.org/10.1177/1524838018809729" rel="noopener" target="_blank">Informing Human Trafficking Clinical Care Through Two Systematic Reviews on Sexual Assault and Intimate Partner Violence</a></h3>
+            <h3><a href="https://doi.org/10.1177/1524838018809729" rel="noopener" target="_blank">Informing Human Trafficking Clinical Care Through Two Systematic Reviews on Sexual Assault and Intimate Partner Violence<span class="sr-only"> (opens in a new tab)</span></a></h3>
             <p>Menon B, Stoklosa H, Van Dommelen K, Awerbuch A, Caddell L, Roberts K, Potter J. Addresses the lack of evidence on the clinical management of patients who have experienced human trafficking.</p>
           </li>
           <li class="pub reveal">
             <span class="journal">International Journal of Human Rights in Healthcare · 2020</span>
-            <h3><a href="https://www.emerald.com/ijhrh/article/13/2/159/126327/Raising-awareness-of-human-trafficking-in-key" rel="noopener" target="_blank">Raising Awareness of Human Trafficking in Key Professional Fields via a Multidisciplinary Educational Approach</a></h3>
+            <h3><a href="https://www.emerald.com/ijhrh/article/13/2/159/126327/Raising-awareness-of-human-trafficking-in-key" rel="noopener" target="_blank">Raising Awareness of Human Trafficking in Key Professional Fields via a Multidisciplinary Educational Approach<span class="sr-only"> (opens in a new tab)</span></a></h3>
             <p>Vol. 13, No. 2, pp. 159–169. Evaluated a one-day educational conference in Miami for medical, law enforcement, social work, and policy professionals, finding a multidisciplinary approach may be effective in raising awareness of human trafficking.</p>
           </li>
         </ul>
@@ -206,9 +202,17 @@
         <div class="cta-band reveal">
           <h2 id="cta-title">Ready to talk about <em>what you need?</em></h2>
           <p>Reach out to schedule an evaluation, ask whether Dr. Awerbuch is a good fit, or learn more about treatment options such as TMS.</p>
-          <div class="btn-row">
-            <a class="btn btn--light" href="contact.html#request">Request an appointment</a>
-            <a class="btn btn--ghost-light" href="tel:+18058453046">Call (805) 845-3046</a>
+          <div class="reach">
+            <a class="reach__option" href="tel:+18058453046">
+              <span class="reach__label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call the office</span>
+              <span class="reach__value">(805) 845-3046</span>
+              <span class="reach__note">Monday to Friday, 9 am to 5 pm</span>
+            </a>
+            <a class="reach__option" href="mailto:office@aawerbuchmd.com">
+              <span class="reach__label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>Email the office</span>
+              <span class="reach__value">office@aawerbuchmd.com</span>
+              <span class="reach__note">For scheduling and general questions</span>
+            </a>
           </div>
         </div>
       </div>

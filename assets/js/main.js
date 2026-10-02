@@ -8,6 +8,13 @@
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.getElementById("site-nav");
 
+  /* Keep in step with the navigation media query in styles.css */
+  var NAV_BREAKPOINT = 1080;
+
+  /* While the menu covers the page, the content behind it is inert so
+     keyboard and screen-reader focus cannot wander into it */
+  var behindMenu = document.querySelectorAll("main, .site-footer");
+
   /* ---- Mobile navigation ---- */
   function setHeaderOffset() {
     if (!header) return;
@@ -22,6 +29,9 @@
     toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     nav.classList.toggle("is-open", open);
     document.body.classList.toggle("nav-open", open);
+    behindMenu.forEach(function (el) {
+      el.inert = open;
+    });
   }
 
   if (toggle && nav) {
@@ -40,7 +50,7 @@
       }
     });
 
-    window.matchMedia("(min-width: 961px)").addEventListener("change", function (mq) {
+    window.matchMedia("(min-width: " + (NAV_BREAKPOINT + 1) + "px)").addEventListener("change", function (mq) {
       if (mq.matches) setNav(false);
     });
   }
@@ -84,116 +94,4 @@
       observer.observe(el);
     });
   }
-
-  /* ---- Appointment request form ----
-     Set data-endpoint on the <form> to a form-handling service URL
-     (ideally a HIPAA-compliant provider that will sign a BAA).
-     Until then, the form validates input and asks visitors to call. */
-  var form = document.querySelector(".request-form");
-  if (!form) return;
-
-  var status = form.querySelector(".form-status");
-  var statusText = status ? status.querySelector("[data-status-text]") : null;
-  var submitBtn = form.querySelector('[type="submit"]');
-
-  function showStatus(message, tone) {
-    if (!status || !statusText) return;
-    statusText.innerHTML = message;
-    status.classList.remove("notice--calm");
-    if (tone === "calm") status.classList.add("notice--calm");
-    status.classList.add("is-visible");
-    status.setAttribute("tabindex", "-1");
-    status.focus({ preventScroll: false });
-  }
-
-  function validateField(field) {
-    var wrapper = field.closest(".field");
-    if (!wrapper) return true;
-    var valid = field.checkValidity();
-    wrapper.classList.toggle("has-error", !valid);
-    field.setAttribute("aria-invalid", String(!valid));
-    return valid;
-  }
-
-  form.querySelectorAll("input, select, textarea").forEach(function (field) {
-    field.addEventListener("blur", function () {
-      if (field.value) validateField(field);
-    });
-    field.addEventListener("input", function () {
-      var wrapper = field.closest(".field");
-      if (wrapper && wrapper.classList.contains("has-error")) validateField(field);
-    });
-  });
-
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    var fields = form.querySelectorAll(".field input, .field select, .field textarea");
-    var firstInvalid = null;
-    fields.forEach(function (field) {
-      if (!validateField(field) && !firstInvalid) firstInvalid = field;
-    });
-
-    if (firstInvalid) {
-      firstInvalid.focus();
-      return;
-    }
-
-    var honeypot = form.querySelector(".hp-field input");
-    if (honeypot && honeypot.value) return;
-
-    var phone = form.getAttribute("data-phone") || "";
-    var phoneLink = phone
-      ? ' <a href="tel:+1' + phone.replace(/\D/g, "") + '">' + phone + "</a>"
-      : "";
-    var email = form.getAttribute("data-email") || "";
-    var emailLink = email ? ' <a href="mailto:' + email + '">' + email + "</a>" : "";
-    var endpoint = (form.getAttribute("data-endpoint") || "").trim();
-
-    if (!endpoint) {
-      showStatus(
-        "<strong>Thank you.</strong> Online requests are not yet being received. To schedule, please call the office at" +
-          phoneLink +
-          (emailLink ? " or email" + emailLink : "") +
-          ".",
-        "calm"
-      );
-      return;
-    }
-
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.dataset.label = submitBtn.textContent;
-      submitBtn.textContent = "Sending…";
-    }
-
-    fetch(endpoint, {
-      method: "POST",
-      body: new FormData(form),
-      headers: { Accept: "application/json" }
-    })
-      .then(function (response) {
-        if (!response.ok) throw new Error("Request failed");
-        form.reset();
-        showStatus(
-          "<strong>Thank you — your request has been sent.</strong> The office will contact you within one to two business days. If you need to reach us sooner, please call" +
-            phoneLink +
-            ".",
-          "calm"
-        );
-      })
-      .catch(function () {
-        showStatus(
-          "<strong>Sorry, something went wrong.</strong> Your request was not sent. Please try again or call the office at" +
-            phoneLink +
-            "."
-        );
-      })
-      .then(function () {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = submitBtn.dataset.label || "Send request";
-        }
-      });
-  });
 })();
